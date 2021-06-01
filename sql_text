@@ -1,7 +1,12 @@
-INSERT INTO `details` (`name`, `latin_name`, `hardiness`) VALUES 
-('Prayer plant', 'Maranta leuconeura', 'Tender'),
-('Fishbone cactus', 'Epiphyllum anguliger', 'Tender'),
-('Chinese money plant', 'Pilea peperomioides', 'Tender'),
-('Swiss cheese plant', 'Monstera deliciosa', 'Tender'),
-('Maidenhair fern', 'Adiantum raddianum', 'Tender'),
-('Devil's Ivy', 'Epipremnum aureum', 'Tender');
+INSERT INTO `details` (`name`, `latin_name`, `hardiness`, `image`) VALUES 
+('Prayer plant', 'Maranta leuconeura', 3, 'prayer.jpg'),
+('Fishbone cactus', 'Epiphyllum anguliger', 3, 'fishbone.jpg'),
+('Chinese money plant', 'Pilea peperomioides', 3, 'chinese.jpg'),
+('Swiss cheese plant', 'Monstera deliciosa', 3, 'swiss.jpg'),
+('Maidenhair fern', 'Adiantum raddianum', 3, 'fern.jpg' ),
+("Devil's Ivy", 'Epipremnum aureum', 3, 'devil.jpg'),
+('Lavender Grosso', 'Lavandula x intermedia', 1, 'lavender.jpg'),
+('Geranium', 'Geranium palmatum', 2, 'geranium.jpg');
+
+INSERT INTO `hardiness` (`hardiness`) VALUES 
+('Fully hardy', 'Half hardy', 'Tender');

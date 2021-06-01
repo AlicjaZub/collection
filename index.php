@@ -2,41 +2,45 @@
 
 session_start();
 include_once 'config.php';
+include_once 'functions.php';
 
-$query = $db->prepare('SELECT `name`, `latin_name`, `hardiness` FROM `details`');
+$query = $db->prepare('SELECT `name`, `latin_name`, `hardiness_type`, `image` FROM `details` 
+    JOIN `hardiness_types` ON `details`.`hardiness`=`hardiness_types`.`id`');
 $query->execute();
 $plants = $query->fetchAll();
-
+//
 //echo '<pre>';
 //var_dump($plants);
 //echo '</pre>';
-function details($array)
-{
-    $something = '';
-    foreach ($array as $details) {
-
-        $something .= '<h1>' . $details['name'] . '</h1>';
-        $something .= '<p><b> Latin name: </b>' . $details['latin_name'] . '</p>';
-        $something .= '<p><b> Hardiness: </b>' . $details['hardiness'] . '</p>';
-    }
-    return $something;
-}
 
 ?>
 
 <html lang="en">
 <head>
     <link href="style.css" rel="stylesheet">
+    <link href="normalize.css" rel="stylesheet">
     <title>Plants :)</title>
 </head>
 <body>
     <div class="container">
-        <div>
             <?php echo details($plants); ?>
-
-
-        </div>
     </div>
+
+        <form action="">
+            <label for="name">Name: </label>
+            <input name="name" id="name" type="text">
+            <label for="latin_name"> Latin Name: </label>
+            <input name="latin_name" id="latin_name" type="text">
+            <label for="hardiness"> Choose the hardiness: </label>
+            <select name="hardiness" id="hardiness" >
+                <option value="Tender">Tender</option>
+                <option value="Half Hardy">Half Hardy</option>
+                <option value="Full Hardy">Full Hardy</option>
+            </select>
+            <label for="image"> Image: </label>
+            <input name="image" id="image" type="file">
+            <input class="button" value="Add a plant!" type="submit">
+        </form>
 </body>
 </html>
 
@@ -46,3 +50,7 @@ function details($array)
 //                    echo  $plants[$i]['latin_name'];
 //                    echo  $plants[$i]['hardiness'];
 //            } ?>
+
+<!--        <div class="image">-->
+<!--            --><?php //echo getImage($plants); ?>
+<!--        </div>-->
