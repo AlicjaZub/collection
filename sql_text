@@ -1,0 +1,7 @@
+INSERT INTO `details` (`name`, `latin_name`, `hardiness`) VALUES 
+('Prayer plant', 'Maranta leuconeura', 'Tender'),
+('Fishbone cactus', 'Epiphyllum anguliger', 'Tender'),
+('Chinese money plant', 'Pilea peperomioides', 'Tender'),
+('Swiss cheese plant', 'Monstera deliciosa', 'Tender'),
+('Maidenhair fern', 'Adiantum raddianum', 'Tender'),
+('Devil's Ivy', 'Epipremnum aureum', 'Tender');
