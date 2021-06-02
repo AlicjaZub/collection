@@ -10,3 +10,19 @@ INSERT INTO `details` (`name`, `latin_name`, `hardiness`, `image`) VALUES
 
 INSERT INTO `hardiness` (`hardiness`) VALUES 
 ('Fully hardy', 'Half hardy', 'Tender');
+<!--    PLEASE IGNORE-->
+<!--        <form action="">-->
+<!--            <label for="name">Name: </label>-->
+<!--            <input name="name" id="name" type="text">-->
+<!--            <label for="latin_name"> Latin Name: </label>-->
+<!--            <input name="latin_name" id="latin_name" type="text">-->
+<!--            <label for="hardiness"> Choose the hardiness: </label>-->
+<!--            <select name="hardiness" id="hardiness" >-->
+<!--                <option value="Tender">Tender</option>-->
+<!--                <option value="Half Hardy">Half Hardy</option>-->
+<!--                <option value="Full Hardy">Full Hardy</option>-->
+<!--            </select>-->
+<!--            <label for="image"> Image: </label>-->
+<!--            <input name="image" id="image" type="file">-->
+<!--            <input class="button" value="Add a plant!" type="submit">-->
+<!--        </form>-->
