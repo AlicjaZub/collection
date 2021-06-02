@@ -18,10 +18,11 @@ $plants = $query->fetchAll();
     <title>Plants :)</title>
 </head>
 <body>
+    <h1 class="main_heading">My plants: </h1>
     <div class="container">
         <?php echo details($plants); ?>
     </div>
-    <div>
+    <div class="add_plant_form">
         <h1>Would you like to add another plant?</h1>
         <form action="add_to_db.php">
             <label for="name">Name: </label>
@@ -34,6 +35,8 @@ $plants = $query->fetchAll();
                 <option value='2'>Half Hardy</option>
                 <option value='1'>Full Hardy</option>
             </select>
+            <label for="image"> Image: </label>
+            <input name="image" id="image" type="file">
             <input class="button" value="Add a plant!" type="submit">
         </form>
     </div>

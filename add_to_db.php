@@ -16,7 +16,6 @@ if (isset($_GET)) {
     ]);
     if ($statement == true) {
         header('Location: index.php');
-        echo 'Plant added to your collection!';
     }
 }
 

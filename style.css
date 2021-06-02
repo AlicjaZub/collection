@@ -5,7 +5,7 @@
 
 .container {
     display: flex;
-    margin: 10%;
+    margin: 2% 10%;
     flex-wrap: wrap;
     justify-content: space-around;
 }
@@ -17,16 +17,26 @@ img {
 form {
     text-align: center;
     display: flex;
-    margin: 10%;
+    margin: 4% 10%;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 
 .button {
     width: 100%;
-    margin: 10% 30%;
+    margin: 8% 30%;
 }
 
-h1 {
+.add_plant_form {
     text-align: center;
+    margin-top: 8%;
+}
+
+.main_heading {
+    margin-top: 6%;
+    font-size: 4rem;
+    font-style: italic;
+    text-align: center;
+
+
 }
