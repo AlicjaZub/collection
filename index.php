@@ -26,6 +26,24 @@ $plants = $query->fetchAll();
     <div class="container">
         <?php echo details($plants); ?>
     </div>
+    <div>
+        <h1>Would you like to add another plant?</h1>
+        <form action="add_to_db.php">
+            <label for="name">Name: </label>
+            <input name="name" id="name" type="text">
+            <label for="latin_name"> Latin Name: </label>
+            <input name="latin_name" id="latin_name" type="text">
+            <label for="hardiness"> Choose the hardiness: </label>
+            <select name="hardiness" id="hardiness" >
+                <option value="Tender">Tender</option>
+                <option value="Half Hardy">Half Hardy</option>
+                <option value="Full Hardy">Full Hardy</option>
+            </select>
+            <label for="image"> Image: </label>
+            <input name="image" id="image" type="file">
+            <input class="button" value="Add a plant!" type="submit">
+        </form>
+    </div>
 </body>
 </html>
 

@@ -2,7 +2,6 @@
     /*border: red solid 2px;*/
     width: 25%;
     text-align: center;
-
 }
 
 .container {
@@ -27,4 +26,8 @@ form {
 .button {
     width: 100%;
     margin: 10% 30%;
+}
+
+h1 {
+    text-align: center;
 }
