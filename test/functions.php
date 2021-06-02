@@ -33,15 +33,15 @@ class functions extends TestCase
     public function testDetails_given_not_nested_array_failure()
     {
         $input = [
-            'name'=> 'Prayer Plant',
-            'latin_name'=> 'Maranta leuconeura',
+            'name' => 'Prayer Plant',
+            'latin_name' => 'Maranta leuconeura',
             'hardiness_type' => 'Tender',
-            'image'=> 'prayer.jpg',
-            'plant1'=> [
-                'name'=> 'Prayer Plant',
-                'latin_name'=> 'Maranta leuconeura',
+            'image' => 'prayer.jpg',
+            'plant1' => [
+                'name' => 'Prayer Plant',
+                'latin_name' => 'Maranta leuconeura',
                 'hardiness_type' => 'Tender',
-                'image'=> 'prayer.jpg']];
+                'image' => 'prayer.jpg']];
         $expected = 'Invalid information!';
         $result = details($input);
         $this->assertIsString($result);
