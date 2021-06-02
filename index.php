@@ -9,11 +9,6 @@ $query = $db->prepare('SELECT `name`, `latin_name`, `hardiness_type`, `image` FR
 $query->execute();
 $plants = $query->fetchAll();
 
-//Checking if the query worked:
-//echo '<pre>';
-//var_dump($plants);
-//echo '</pre>';
-
 ?>
 
 <html lang="en">
@@ -35,25 +30,12 @@ $plants = $query->fetchAll();
             <input name="latin_name" id="latin_name" type="text">
             <label for="hardiness"> Choose the hardiness: </label>
             <select name="hardiness" id="hardiness" >
-                <option value="Tender">Tender</option>
-                <option value="Half Hardy">Half Hardy</option>
-                <option value="Full Hardy">Full Hardy</option>
+                <option value='3'>Tender</option>
+                <option value='2'>Half Hardy</option>
+                <option value='1'>Full Hardy</option>
             </select>
-            <label for="image"> Image: </label>
-            <input name="image" id="image" type="file">
             <input class="button" value="Add a plant!" type="submit">
         </form>
     </div>
 </body>
 </html>
-
-<!--A way to do it with for loop - don't do it this way, use foreach-->
-    <!--            --><?php //for($i = 0; $i < count($plants); $i++) {
-//                    echo  $plants[$i]['name'];
-//                    echo  $plants[$i]['latin_name'];
-//                    echo  $plants[$i]['hardiness'];
-//            } ?>
-<!--If I want the image in a separate div:-->
-<!--        <div class="image">-->
-<!--            --><?php //echo getImage($plants); ?>
-<!--        </div>-->
