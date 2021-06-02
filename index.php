@@ -1,13 +1,16 @@
 <?php
 
-session_start();
-include_once 'config.php';
-include_once 'functions.php';
+require_once 'config.php';
+require_once 'functions.php';
 
-$query = $db->prepare('SELECT `name`, `latin_name`, `hardiness_type`, `image` FROM `details` 
+function getPlants(): array
+{
+    $db = connectDB();
+    $query = $db->prepare('SELECT `name`, `latin_name`, `hardiness_type`, `image` FROM `details` 
     JOIN `hardiness_types` ON `details`.`hardiness`=`hardiness_types`.`id`');
-$query->execute();
-$plants = $query->fetchAll();
+    $query->execute();
+    return $query->fetchAll();
+}
 
 ?>
 
@@ -19,7 +22,7 @@ $plants = $query->fetchAll();
 </head>
 <body>
     <div class="container">
-        <?php echo details($plants); ?>
+        <?php echo details(getPlants()); ?>
     </div>
 </body>
 </html>
