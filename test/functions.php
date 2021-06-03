@@ -9,17 +9,18 @@ class functions extends TestCase
     public function testDetails_success()
     {
         $input = [
-            'plant1'=>[
-                'name'=> 'Prayer Plant',
-                'latin_name'=> 'Maranta leuconeura',
+            'plant1' => [
+                'name' => 'Prayer Plant',
+                'latin_name' => 'Maranta leuconeura',
                 'hardiness_type' => 'Tender',
-                'image'=> 'prayer.jpg'],
-            'plant2'=> [
-                'name'=> 'Prayer Plant',
-                'latin_name'=> 'Maranta leuconeura',
+                'image' => 'prayer.jpg'],
+            'plant2' => [
+                'name' => 'Prayer Plant',
+                'latin_name' => 'Maranta leuconeura',
                 'hardiness_type' => 'Tender',
-                'image'=> 'prayer.jpg'
-            ]];
+                'image' => 'prayer.jpg'
+            ]
+        ];
         $expected = '<div class="items"><h1>Prayer Plant</h1><img src="images/prayer.jpg" ' .
             'alt="Prayer Plant"><p><b> Latin name: </b>Maranta leuconeura</p><p><b> ' .
             'Hardiness: </b>Tender</p></div><div class="items"><h1>Prayer Plant</h1><img ' .
@@ -33,15 +34,17 @@ class functions extends TestCase
     public function testDetails_given_not_nested_array_failure()
     {
         $input = [
-            'name'=> 'Prayer Plant',
-            'latin_name'=> 'Maranta leuconeura',
+            'name' => 'Prayer Plant',
+            'latin_name' => 'Maranta leuconeura',
             'hardiness_type' => 'Tender',
-            'image'=> 'prayer.jpg',
-            'plant1'=> [
-                'name'=> 'Prayer Plant',
-                'latin_name'=> 'Maranta leuconeura',
+            'image' => 'prayer.jpg',
+            'plant1' => [
+                'name' => 'Prayer Plant',
+                'latin_name' => 'Maranta leuconeura',
                 'hardiness_type' => 'Tender',
-                'image'=> 'prayer.jpg']];
+                'image' => 'prayer.jpg'
+            ]
+        ];
         $expected = 'Invalid information!';
         $result = details($input);
         $this->assertIsString($result);

@@ -4,16 +4,6 @@ session_start();
 include_once 'config.php';
 include_once 'functions.php';
 
-$query = $db->prepare('SELECT `name`, `latin_name`, `hardiness_type`, `image` FROM `details` 
-    JOIN `hardiness_types` ON `details`.`hardiness`=`hardiness_types`.`id`');
-$query->execute();
-$plants = $query->fetchAll();
-
-//Checking if the query worked:
-//echo '<pre>';
-//var_dump($plants);
-//echo '</pre>';
-
 ?>
 
 <html lang="en">
@@ -23,19 +13,25 @@ $plants = $query->fetchAll();
     <title>Plants :)</title>
 </head>
 <body>
+    <h1 class="main_heading">My plants: </h1>
     <div class="container">
-        <?php echo details($plants); ?>
+        <?php echo details(getPlants()); ?>
+    </div>
+    <div class="add_plant_form">
+        <h1>Would you like to add another plant?</h1>
+        <form action="add_to_db.php">
+            <label for="name">Name: </label>
+            <input name="name" id="name" type="text" required>
+            <label for="latin_name"> Latin Name: </label>
+            <input name="latin_name" id="latin_name" type="text" required>
+            <label for="hardiness"> Choose the hardiness: </label>
+            <select name="hardiness" id="hardiness">
+                <option value='3'>Tender</option>
+                <option value='2'>Half Hardy</option>
+                <option value='1'>Full Hardy</option>
+            </select>
+            <input class="button" value="Add a plant!" type="submit">
+        </form>
     </div>
 </body>
 </html>
-
-<!--A way to do it with for loop - don't do it this way, use foreach-->
-    <!--            --><?php //for($i = 0; $i < count($plants); $i++) {
-//                    echo  $plants[$i]['name'];
-//                    echo  $plants[$i]['latin_name'];
-//                    echo  $plants[$i]['hardiness'];
-//            } ?>
-<!--If I want the image in a separate div:-->
-<!--        <div class="image">-->
-<!--            --><?php //echo getImage($plants); ?>
-<!--        </div>-->
