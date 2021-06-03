@@ -1,0 +1,28 @@
+.items {
+    width: 25%;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    margin: 10%;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+img {
+    width: 180px;
+}
+
+form {
+    text-align: center;
+    display: flex;
+    margin: 10%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.button {
+    width: 100%;
+    margin: 10% 30%;
+}
