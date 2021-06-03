@@ -4,14 +4,6 @@ session_start();
 include_once 'config.php';
 include_once 'functions.php';
 
-function getPlants(): array
-{
-    $db = connectDB();
-    $query = $db->prepare('SELECT `name`, `latin_name`, `hardiness_type`, `image` FROM `details` 
-    JOIN `hardiness_types` ON `details`.`hardiness`=`hardiness_types`.`id`');
-    $query->execute();
-    return $query->fetchAll();
-}
 ?>
 
 <html lang="en">
@@ -38,8 +30,6 @@ function getPlants(): array
                 <option value='2'>Half Hardy</option>
                 <option value='1'>Full Hardy</option>
             </select>
-            <label for="image"> Image: </label>
-            <input name="image" id="image" type="file">
             <input class="button" value="Add a plant!" type="submit">
         </form>
     </div>
