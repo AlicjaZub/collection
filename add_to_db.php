@@ -3,6 +3,7 @@
 session_start();
 require_once 'config.php';
 
+$db = connectDB();
 if (isset($_GET)) {
     $name = $_GET['name'];
     $latin_name = $_GET['latin_name'];

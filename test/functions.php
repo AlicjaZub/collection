@@ -19,7 +19,8 @@ class functions extends TestCase
                 'latin_name' => 'Maranta leuconeura',
                 'hardiness_type' => 'Tender',
                 'image' => 'prayer.jpg'
-            ]];
+            ]
+        ];
         $expected = '<div class="items"><h1>Prayer Plant</h1><img src="images/prayer.jpg" ' .
             'alt="Prayer Plant"><p><b> Latin name: </b>Maranta leuconeura</p><p><b> ' .
             'Hardiness: </b>Tender</p></div><div class="items"><h1>Prayer Plant</h1><img ' .
@@ -41,7 +42,9 @@ class functions extends TestCase
                 'name' => 'Prayer Plant',
                 'latin_name' => 'Maranta leuconeura',
                 'hardiness_type' => 'Tender',
-                'image' => 'prayer.jpg']];
+                'image' => 'prayer.jpg'
+            ]
+        ];
         $expected = 'Invalid information!';
         $result = details($input);
         $this->assertIsString($result);
